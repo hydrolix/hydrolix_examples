@@ -1,8 +1,8 @@
-# Project Title
+# Zuplo Integration with Hydrolix
 
 Use the configuration files in this repo to accompish either of the following:
 * Generate an API gateway in Zuplo for a Hydrolix cluster
-* Export Zuplo logs and generate Grafana dashboards to view the exported Zuplo data
+* Export Zuplo logs to Hydrolix and generate Grafana dashboards to view the exported Zuplo data
 
 ## Getting Started
 
