@@ -1,0 +1,71 @@
+{
+  "name": "cribl-transform",
+  "description": "",
+  "settings": {
+    "is_default": true,
+    "rate_limit": null,
+    "sql_transform": null,
+    "null_values": [],
+    "sample_data": {
+      "_raw": "{\"resource\": \"/done\",\"path\": \"/done\",\"httpMethod\": \"POST\",\"headers\":{\"Accept\":\"application/json, text/javascript, */*; q=0.01\",\"Accept-Encoding\":\"gzip, deflate, br\",\"Accept-Language\": \"en-US,en;q=0.9\",\"CloudFront-Forwarded-Proto\": \"https\",\"CloudFront-Is-Desktop-Viewer\": \"true\",\"CloudFront-Is-Mobile-Viewer\": \"false\",\"CloudFront-Is-SmartTV-Viewer\": \"false\",\"CloudFront-Is-Tablet-Viewer\": \"false\",\"CloudFront-Viewer-Country\": \"US\",\"content-type\": \"application/json\",\"Host\": \"jef18742ajw.execute-api.us-west-2.amazonaws.com\",\"origin\": \"https://cdn.foo.com\",\"Referer\": \"https://cdn.foo.com/bugger/index.html\",\"User-Agent\":\"Mozilla/5.0 (Linux; U; Android 2.3.4; ko-kr; HTC_X515E Build/GRJ22) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1\",\"Via\": \"2.0 o770SHO0yVumTIPw5M76GC1N2y0TKX0lp.cloudfront.net (CloudFront)\",\"X-Amz-Cf-Id\": \"lJsX2VQF96vKeckdvtiYbr86NJPI3qa6NJkbSP9g7N26FpZM0mUd0kCO\",\"X-Amzn-Trace-Id\": \"Root=0UmGwfkeveeli7Eo62x6IgiCIya9ai6KMj\",\"X-Forwarded-For\": \"12.130.60.5\",\"X-Forwarded-Port\": \"443\",\"X-Forwarded-Proto\": \"https\"},\"multiValueHeaders\": {\"Accept\": [\"application/json, text/javascript, */*; q=0.01\"],\"Accept-Encoding\": [\"gzip, deflate, br\"],\"Accept-Language\": [\"en-US,en;q=0.9\"],\"CloudFront-Forwarded-Proto\": [\"https\"],\"CloudFront-Is-Desktop-Viewer\": [\"true\"],\"CloudFront-Is-Mobile-Viewer\": [\"false\"],\"CloudFront-Is-SmartTV-Viewer\": [\"false\"],\"CloudFront-Is-Tablet-Viewer\": [\"false\"],\"CloudFront-Viewer-Country\": [\"US\"],\"content-type\": [\"application/json\"],\"Host\": [\"jef18742ajw.execute-api.us-west-2.amazonaws.com\"],\"origin\": [\"https://cdn.foo.com\"],\"Referer\": [\"https://cdn.foo.com/bugger/index.html\"],\"User-Agent\": [\"Mozilla/5.0 (Linux; U; Android 2.3.4; ko-kr; HTC_X515E Build/GRJ22) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1\"],\"Via\": [\"2.0 SApGYuP694Zi7bfaDMM8mTyltSJCWY4sH.cloudfront.net (CloudFront)\"],\"X-Amz-Cf-Id\": [\"4FfvFRSl2FGhY0sel07vsqdg79Xhd3DEjG9nPThyEsTAbPDckiAnsdPO\"],\"X-Amzn-Trace-Id\": [\"Root=tkMgGOpT3d0DZ53KA3ulTUJsAZuIGFjdFo\"],\"X-Forwarded-For\": [\"12.130.60.5\"],\"X-Forwarded-Port\": [\"443\"],\"X-Forwarded-Proto\": [\"https\"]},\"queryStringParameters\": null,\"multiValueQueryStringParameters\": null,\"pathParameters\": null,\"stageVariables\": null,\"requestContext\": {\"resourceId\": \"vE6wyI\",\"resourcePath\": \"/done\",\"httpMethod\": \"POST\",\"extendedRequestId\": \"we9PBiOnJpeqbPS5\",\"requestTime\": \"23/Apr/2020:13:37:40 +0000\",\"path\": \"/prod/done\",\"accountId\": \"718298359019\",\"protocol\": \"HTTP/1.1\",\"stage\": \"prod\",\"domainPrefix\": \"jef18742ajw\",\"requestTimeEpoch\": 1587649060},\"requestId\": \"a8f641b5-007a-44ba-b013-391ffee8cbdf\",\"identity\": {\"cognitoIdentityPoolId\": null,\"accountId\": null,\"cognitoIdentityId\": null,\"caller\": null,\"sourceIp\": \"12.130.60.5\",\"accessKey\": null,\"cognitoAuthenticationType\": null,\"cognitoAuthenticationProvider\": null,\"userArn\": null,\"userAgent\": \"Mozilla/5.0 (Linux; U; Android 2.3.4; ko-kr; HTC_X515E Build/GRJ22) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1\",\"user\": null},\"domainName\": \"jef18742ajw.execute-api.us-west-2.amazonaws.com\",\"apiId\": \"jef18742ajw\"},\"body\": \"{\\\"done\\\":\\\"true\\\"}\",\"isBase64Encoded\": false",
+      "host": "localhost",
+      "_time": 1587649060.124,
+      "source": "cribl",
+      "sourcetype": "cribl"
+    },
+    "data_mirroring_target": null,
+    "output_columns": [
+      {
+        "name": "_raw",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "_time",
+        "datatype": {
+          "type": "epoch",
+          "index": false,
+          "index_options": {
+            "fulltext": false
+          },
+          "primary": true,
+          "ignore": false,
+          "format": "s",
+          "resolution": "ms",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      }
+    ],
+    "compression": "",
+    "wurfl": null,
+    "format_details": {
+      "flattening": {
+        "depth": null,
+        "active": false,
+        "map_flattening_strategy": {
+          "left": "",
+          "right": ""
+        },
+        "slice_flattening_strategy": {
+          "left": "",
+          "right": ""
+        }
+      }
+    }
+  },
+  "url": "https://{host}.hydrolix.live/config/v1/orgs/{org_uuid}/projects/{project_uuid}/tables/{table_uuid}/transforms",
+  "type": "json",
+  "table": "{table_uuid}"
+}
