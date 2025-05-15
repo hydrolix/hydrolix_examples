@@ -566,7 +566,6 @@
   "timepicker": {},
   "timezone": "browser",
   "title": "Cribl Overview",
-  "uid": "{dashboard_uid}",
   "version": 6,
   "weekStart": ""
 }
