@@ -1,0 +1,34 @@
+{
+  "id": "hydrolix",
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "functions": [
+      {
+        "id": "serialize",
+        "filter": "true",
+        "conf": {
+          "type": "json",
+          "dstField": "_raw",
+          "fields": []
+        }
+      },
+      {
+        "id": "eval",
+        "filter": "true",
+        "disabled": false,
+        "conf": {
+          "keep": [
+            "_raw",
+            "_time"
+          ],
+          "remove": [
+            "*"
+          ]
+        }
+      }
+    ]
+  }
+}
