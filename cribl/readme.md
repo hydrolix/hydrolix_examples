@@ -11,4 +11,4 @@ Make sure you have the following set up prior to integrating Cribl with Hydrolix
 
 ## Installation
 
-See the Hydrolix [integration with Cribl documentation](https://docs.hydrolix.io/docs/cribl-integration) for installation details.
+See the Hydrolix [Cribl integration](https://docs.hydrolix.io/docs/cribl-integration) documentation for installation details.
