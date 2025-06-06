@@ -9,5 +9,6 @@ View the README.md file in each directory for more information.
   * Apache web access logs
   * Netflow logs
   * Note that more transforms can be found in the official [Hydrolix Transform Repository](https://github.com/hydrolix/transforms))
+* Cribl: [Sample configuration](https://github.com/hydrolix/hydrolix_examples/tree/main/cribl) to export data from Cribl into Hydrolix
 * Miscellaneous
   * A [Postgres v11 -> v12 upgrade script](miscellaneous/postgres-upgrade-job.yaml) for customers using the internal Postgres pod

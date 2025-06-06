@@ -1,0 +1,259 @@
+{
+  "name": "cloudflare",
+  "description": "",
+  "settings": {
+    "is_default": true,
+    "rate_limit": null,
+    "sql_transform": null,
+    "null_values": [],
+    "output_columns": [
+      {
+        "name": "timestamp",
+        "datatype": {
+          "type": "datetime",
+          "index": false,
+          "primary": true,
+          "format": "2006-01-02T15:04:05Z",
+          "resolution": "ms",
+          "default": null,
+          "source": {
+            "from_input_field": "EdgeStartTimestamp"
+          }
+        }
+      },
+      {
+        "name": "clf_cache_cache_status",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "CacheCacheStatus"
+          }
+        }
+      },
+      {
+        "name": "clf_cache_reserve_used",
+        "datatype": {
+          "type": "bool",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "CacheReserveUsed"
+          }
+        }
+      },
+      {
+        "name": "clf_cache_response_bytes",
+        "datatype": {
+          "type": "uint32",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "CacheResponseBytes"
+          }
+        }
+      },
+      {
+        "name": "clf_cache_response_status",
+        "datatype": {
+          "type": "uint8",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "CacheResponseStatus"
+          }
+        }
+      },
+      {
+        "name": "client_asn",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "ClientASN"
+          }
+        }
+      },
+      {
+        "name": "client_city",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "ClientCity"
+          }
+        }
+      },
+      {
+        "name": "client_country_iso_code",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "ClientCountry"
+          }
+        }
+      },
+      {
+        "name": "client_ip",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "ClientIP"
+          }
+        }
+      },
+      {
+        "name": "request_total_bytes",
+        "datatype": {
+          "type": "uint64",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "ClientRequestBytes"
+          }
+        }
+      },
+      {
+        "name": "request_host",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "ClientRequestHost"
+          }
+        }
+      },
+      {
+        "name": "request_method",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "ClientRequestMethod"
+          }
+        }
+      },
+      {
+        "name": "request_full_path",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "ClientRequestPath"
+          }
+        }
+      },
+      {
+        "name": "request_protocol",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "ClientRequestProtocol"
+          }
+        }
+      },
+      {
+        "name": "request_referer",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "ClientRequestReferer"
+          }
+        }
+      },
+      {
+        "name": "request_user_agent",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "ClientRequestUserAgent"
+          }
+        }
+      },
+      {
+        "name": "edge_pop",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "EdgeColoCode"
+          }
+        }
+      },
+      {
+        "name": "response_total_bytes",
+        "datatype": {
+          "type": "uint64",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "EdgeResponseBytes"
+          }
+        }
+      },
+      {
+        "name": "response_content_type",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "EdgeResponseContentType"
+          }
+        }
+      },
+      {
+        "name": "response_status_code",
+        "datatype": {
+          "type": "uint32",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "EdgeResponseStatus"
+          }
+        }
+      },
+      {
+        "name": "edge_ip",
+        "datatype": {
+          "type": "string",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "EdgeServerIP"
+          }
+        }
+      },
+      {
+        "name": "response_time_to_first_byte_ms",
+        "datatype": {
+          "type": "uint32",
+          "primary": false,
+          "index": true,
+          "source": {
+            "from_input_field": "EdgeTimeToFirstByteMs"
+          }
+        }
+      }
+    ],
+    "url": "https://{host}.hydrolix.live/config/v1/orgs/{org_uuid}/projects/{project_uuid}/tables/{table_uuid}/transforms",
+    "type": "json",
+    "table": "{table_uuid}"
+  },
