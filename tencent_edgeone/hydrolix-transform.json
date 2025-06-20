@@ -1,730 +1,740 @@
-[
-  {
-    "name": "ClientState",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "BotTag",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "EdgeSeverRegion",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestID",
-    "datatype": {
-      "type": "uint64",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestMethod",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestUrlQueryString",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "LogTime",
-    "datatype": {
-      "type": "datetime",
-      "index": true,
-      "primary": false,
-      "format": "2006-01-02T15:05:05Z",
-      "resolution": "s",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestUrl",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestBodyBytes",
-    "datatype": {
-      "type": "uint8",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "SecurityRuleID",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "OriginRequestHeaderSendDuration",
-    "datatype": {
-      "type": "double",
-      "index": false,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "EdgeResponseTime",
-    "datatype": {
-      "type": "uint32",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "ParentRequestID",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestSSLProtocol",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestTime",
-    "datatype": {
-      "type": "datetime",
-      "index": false,
-      "primary": true,
-      "format": "2006-01-02T15:05:05Z",
-      "resolution": "s",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "EdgeResponseStatusCode",
-    "datatype": {
-      "type": "uint32",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "ClientIP",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "BotCharacteristic",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "SecurityAction",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "EdgeEndTime",
-    "datatype": {
-      "type": "datetime",
-      "index": true,
-      "primary": false,
-      "format": "2006-01-02T15:05:05Z",
-      "resolution": "s",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestRange",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "BotClassScanner",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "BotClassProxy",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "ClientDeviceType",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestHost",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "OriginSSLProtocol",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "EdgeResponseBodyBytes",
-    "datatype": {
-      "type": "uint32",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestProtocol",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "EdgeServerID",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "EdgeCacheStatus",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "EdgeFunctionSubrequest",
-    "datatype": {
-      "type": "uint8",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "EdgeResponseBytes",
-    "datatype": {
-      "type": "uint32",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "OriginTCPHandshakeDuration",
-    "datatype": {
-      "type": "double",
-      "index": false,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "SecurityModule",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "EdgeInternalTime",
-    "datatype": {
-      "type": "uint32",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestBytes",
-    "datatype": {
-      "type": "uint32",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "OriginIP",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "JA3Hash",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "OriginResponseHeaderDuration",
-    "datatype": {
-      "type": "double",
-      "index": false,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "OriginResponseStatusCode",
-    "datatype": {
-      "type": "uint32",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "ClientRegion",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RemotePort",
-    "datatype": {
-      "type": "uint8",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "ClientISP",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "BotClassMaliciousBot",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "BotClassAccountTakeOver",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "OriginDNSResponseDuration",
-    "datatype": {
-      "type": "double",
-      "index": false,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestReferer",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "BotClassAttacker",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestUA",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "EdgeServerIP",
-    "datatype": {
-      "type": "string",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "OriginTLSHandshakeDuration",
-    "datatype": {
-      "type": "int8",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
-  },
-  {
-    "name": "RequestStatus",
-    "datatype": {
-      "type": "uint8",
-      "index": true,
-      "primary": false,
-      "format": null,
-      "resolution": "seconds",
-      "default": null,
-      "script": null,
-      "source": null,
-      "suppress": false
-    }
+{
+  "name": "tencent_edgeone",
+  "description": "",
+  "settings": {
+    "is_default": true,
+    "rate_limit": null,
+    "sql_transform": null,
+    "null_values": [],
+    "output_columns": [
+      {
+        "name": "ClientState",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "BotTag",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "EdgeSeverRegion",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestID",
+        "datatype": {
+          "type": "uint64",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestMethod",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestUrlQueryString",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "LogTime",
+        "datatype": {
+          "type": "datetime",
+          "index": true,
+          "primary": false,
+          "format": "2006-01-02T15:05:05Z",
+          "resolution": "s",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestUrl",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestBodyBytes",
+        "datatype": {
+          "type": "uint8",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "SecurityRuleID",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "OriginRequestHeaderSendDuration",
+        "datatype": {
+          "type": "double",
+          "index": false,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "EdgeResponseTime",
+        "datatype": {
+          "type": "uint32",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "ParentRequestID",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestSSLProtocol",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestTime",
+        "datatype": {
+          "type": "datetime",
+          "index": false,
+          "primary": true,
+          "format": "2006-01-02T15:05:05Z",
+          "resolution": "s",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "EdgeResponseStatusCode",
+        "datatype": {
+          "type": "uint32",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "ClientIP",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "BotCharacteristic",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "SecurityAction",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "EdgeEndTime",
+        "datatype": {
+          "type": "datetime",
+          "index": true,
+          "primary": false,
+          "format": "2006-01-02T15:05:05Z",
+          "resolution": "s",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestRange",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "BotClassScanner",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "BotClassProxy",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "ClientDeviceType",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestHost",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "OriginSSLProtocol",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "EdgeResponseBodyBytes",
+        "datatype": {
+          "type": "uint32",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestProtocol",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "EdgeServerID",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "EdgeCacheStatus",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "EdgeFunctionSubrequest",
+        "datatype": {
+          "type": "uint8",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "EdgeResponseBytes",
+        "datatype": {
+          "type": "uint32",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "OriginTCPHandshakeDuration",
+        "datatype": {
+          "type": "double",
+          "index": false,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "SecurityModule",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "EdgeInternalTime",
+        "datatype": {
+          "type": "uint32",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestBytes",
+        "datatype": {
+          "type": "uint32",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "OriginIP",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "JA3Hash",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "OriginResponseHeaderDuration",
+        "datatype": {
+          "type": "double",
+          "index": false,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "OriginResponseStatusCode",
+        "datatype": {
+          "type": "uint32",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "ClientRegion",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RemotePort",
+        "datatype": {
+          "type": "uint8",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "ClientISP",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "BotClassMaliciousBot",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "BotClassAccountTakeOver",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "OriginDNSResponseDuration",
+        "datatype": {
+          "type": "double",
+          "index": false,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestReferer",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "BotClassAttacker",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestUA",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "EdgeServerIP",
+        "datatype": {
+          "type": "string",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "OriginTLSHandshakeDuration",
+        "datatype": {
+          "type": "int8",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      },
+      {
+        "name": "RequestStatus",
+        "datatype": {
+          "type": "uint8",
+          "index": true,
+          "primary": false,
+          "format": null,
+          "resolution": "seconds",
+          "default": null,
+          "script": null,
+          "source": null,
+          "suppress": false
+        }
+      }
+    ]
   }
-]
+}
