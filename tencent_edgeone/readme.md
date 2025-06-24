@@ -1,7 +1,6 @@
 # Tencent EdgeOne Integration with Hydrolix
 
-Use the configuration files in this repo to export Tencent EdgeOne logs to Hydrolix and generate a 
-Grafana dashboard to view the exported data.
+Use the configuration files in this repo to export Tencent EdgeOne logs to Hydrolix and generate a Grafana dashboard to view the exported data.
 
 ## Before you begin
 
