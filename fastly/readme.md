@@ -1,6 +1,6 @@
 # Fastly Integration with Hydrolix
 
-Use the configuration files in this repo to export Fastly [real-time log streaming service](https://www.fastly.com/documentation/guides/integrations/streaming-logs/about-fastlys-realtime-log-streaming-features/) data to Hydrolix and generate a Grafana dashboard to view the exported data.
+Use the configuration files in this repo to generate a Grafana dashboard for Fastly [real-time log streaming service](https://www.fastly.com/documentation/guides/integrations/streaming-logs/about-fastlys-realtime-log-streaming-features/) data exported Hydrolix.
 
 ## Before you begin
 
