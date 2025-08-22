@@ -25,7 +25,7 @@
       "targetBlank": true,
       "title": "Hydrolix Version Information",
       "type": "link",
-      "url": "https://${HDX_HOSTNAME}.hydrolix.live/version"
+      "url": "https://{hostname}.hydrolix.live/version"
     }
   ],
   "panels": [
