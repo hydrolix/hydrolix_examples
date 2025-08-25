@@ -1,0 +1,5 @@
+# Fastly Log Format for Hydrolix
+
+Fastly's [Real-Time Log Streaming](https://www.fastly.com/documentation/guides/integrations/streaming-logs/about-fastlys-realtime-log-streaming-features/) feature uses a [custom log format](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/) to define which fields to export. This custom format uses variables preceded by a percent sign (`%`) in the JSON-like format which are interpolated at runtime in Fastly's architecture. See the JSON section of Fastly's [useful log formats](https://www.fastly.com/documentation/guides/integrations/streaming-logs/useful-log-formats/#json) page for more information on configuring fields for endpoints that accept JSON-formatted logs.
+
+The provided log format file is an extended edition based on the [log format example](hhttps://www.fastly.com/documentation/guides/integrations/logging-endpoints/log-streaming-hydrolix/#log-format-recommendations) from Fastly's Log Streaming: Hydrolix documentation. 
