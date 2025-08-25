@@ -1,0 +1,1371 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1245,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "grafana-hydrolix-datasource",
+        "uid": "aeh40cjw63nk0c"
+      },
+      "description": "Number of request group by HTTP Status Code",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "mbytes"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "http 4.."
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "continuous-reds",
+                  "seriesBy": "max"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "http 2.."
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "continuous-greens",
+                  "seriesBy": "max"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "http 5.."
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "orange",
+                  "mode": "continuous-YlRd",
+                  "seriesBy": "max"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "http 3.."
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "blue",
+                  "mode": "continuous-blues",
+                  "seriesBy": "max"
+                }
+              }
+            ]
+          },
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "http 404"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "http 404"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-purple",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "legend": {
+          "calcs": [
+            "sum",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Total",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-hydrolix-datasource",
+            "uid": "aeh40cjw63nk0c"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "meta": {
+            "builderOptions": {
+              "columns": [],
+              "database": "elkjop",
+              "filters": [],
+              "limit": 100,
+              "mode": "list",
+              "orderBy": [],
+              "queryType": "table",
+              "table": "logs"
+            }
+          },
+          "pluginVersion": "4.8.2",
+          "queryType": "table",
+          "rawSql": "SELECT toString(response_status_code) as HTTP_Status_Code, $__timeInterval(timestamp) as time, count(*) as http\nFROM ${table}\nWHERE $__timeFilter(timestamp)\nAND $__adHocFilter()\nGROUP BY HTTP_Status_Code, time ORDER BY time\nSETTINGS hdx_query_max_execution_time=60, hdx_query_admin_comment='db=${__dashboard}; dp=Hits per status code; du=${__user.login}'",
+          "refId": "A"
+        }
+      ],
+      "title": "Hits per status code",
+      "transformations": [
+        {
+          "id": "prepareTimeSeries",
+          "options": {
+            "format": "many"
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-hydrolix-datasource",
+        "uid": "aeh40cjw63nk0c"
+      },
+      "description": "Cache Hit Ratio :\nsum of all request with cache_was_cached: 1 / divided by total count of request",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-hydrolix-datasource",
+            "uid": "aeh40cjw63nk0c"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "meta": {
+            "builderOptions": {
+              "columns": [],
+              "database": "elkjop",
+              "filters": [],
+              "limit": 100,
+              "mode": "list",
+              "orderBy": [],
+              "queryType": "table",
+              "table": "logs"
+            }
+          },
+          "pluginVersion": "4.0.6",
+          "queryType": "table",
+          "rawSql": "SELECT time, cache_hit FROM(\nSELECT $__timeInterval(timestamp) as time,\nsumIf(cache_was_cached,1) as \"cached\",\ncached/count() * 100 as \"cache_hit\"\nFROM ${table}\nWHERE $__timeFilter(timestamp)\nAND $__adHocFilter()\nGROUP BY time ORDER BY time)\nSETTINGS hdx_query_max_execution_time=60, hdx_query_admin_comment='db=${__dashboard}; dp=Cache Hit Ratio; du=${__user.login}'",
+          "refId": "A"
+        }
+      ],
+      "title": "Cache Hit Ratio",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-hydrolix-datasource",
+        "uid": "aeh40cjw63nk0c"
+      },
+      "description": "Throughput is the sum of all bytes delivered / divided by sum of transfer time",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "binBps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 18,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-hydrolix-datasource",
+            "uid": "aeh40cjw63nk0c"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "meta": {
+            "builderOptions": {
+              "columns": [],
+              "database": "elkjop",
+              "filters": [],
+              "limit": 100,
+              "mode": "list",
+              "orderBy": [],
+              "queryType": "table",
+              "table": "logs"
+            }
+          },
+          "pluginVersion": "4.0.6",
+          "queryType": "table",
+          "rawSql": "SELECT $__timeInterval(timestamp) as time,\nsum(response_total_bytes) / sum(response_time_to_last_byte_ms/1000) as throughput\nFROM ${table}\nWHERE $__timeFilter(timestamp)\nAND $__adHocFilter()\nGROUP BY time ORDER BY time\nSETTINGS hdx_query_max_execution_time=60, hdx_query_admin_comment='db=${__dashboard}; dp=Throughput; du=${__user.login}'",
+          "refId": "A"
+        }
+      ],
+      "title": "Throughput",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-hydrolix-datasource",
+        "uid": "aeh40cjw63nk0c"
+      },
+      "description": "Sum of Total Bytes Delivered",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 17,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-hydrolix-datasource",
+            "uid": "aeh40cjw63nk0c"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "meta": {
+            "builderOptions": {
+              "columns": [],
+              "database": "elkjop",
+              "filters": [],
+              "limit": 100,
+              "mode": "list",
+              "orderBy": [],
+              "queryType": "table",
+              "table": "logs"
+            }
+          },
+          "pluginVersion": "4.0.6",
+          "queryType": "table",
+          "rawSql": "SELECT $__timeInterval(timestamp) as time,\nsum(response_total_bytes) as Bytes_Delivered\nFROM ${table}\nWHERE $__timeFilter(timestamp)\nAND $__adHocFilter()\nGROUP BY time ORDER BY time\nSETTINGS hdx_query_max_execution_time=60, hdx_query_admin_comment='db=${__dashboard}; dp=Bytes Delivered; du=${__user.login}'",
+          "refId": "A"
+        }
+      ],
+      "title": "Bytes Delivered",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-hydrolix-datasource",
+        "uid": "aeh40cjw63nk0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "count()"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 83
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "request_full_path"
+            },
+            "properties": [
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "title": "Filter",
+                    "url": "/d/${__dashboard.uid}/${__dashboard}?${__all_variables}&var-request_full_path=${__data.fields.request_full_path:percentencode}"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 5,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-hydrolix-datasource",
+            "uid": "aeh40cjw63nk0c"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "meta": {
+            "builderOptions": {
+              "columns": [],
+              "database": "",
+              "limit": 100,
+              "mode": "list",
+              "queryType": "table",
+              "table": ""
+            }
+          },
+          "pluginVersion": "4.0.6",
+          "queryType": "table",
+          "rawSql": "WITH (\n        SELECT topK(50)(request_full_path)\n        FROM ${table}\n        WHERE $__timeFilter(timestamp)\n            AND $__adHocFilter() \n) AS top_50_request_full_path\nSELECT\n    count(),\n    request_full_path\nFROM ${table}\nWHERE $__timeFilter(timestamp) AND has(top_50_request_full_path, request_full_path)\nAND $__adHocFilter()\nGROUP BY request_full_path\nORDER BY count() DESC\nSETTINGS hdx_query_max_execution_time=60, hdx_query_admin_comment='db=${__dashboard}; dp=Top 50 Path; du=${__user.login}'",
+          "refId": "A"
+        }
+      ],
+      "title": "Top 50 Path",
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-hydrolix-datasource",
+        "uid": "aeh40cjw63nk0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "count()"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 83
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "request_user_agent"
+            },
+            "properties": [
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "title": "Filter",
+                    "url": "/d/${__dashboard.uid}/${__dashboard}?${__all_variables}&var-request_user_agent=${__data.fields.request_user_agent:percentencode}"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "id": 6,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-hydrolix-datasource",
+            "uid": "aeh40cjw63nk0c"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "meta": {
+            "builderOptions": {
+              "columns": [],
+              "database": "",
+              "limit": 100,
+              "mode": "list",
+              "queryType": "table",
+              "table": ""
+            }
+          },
+          "pluginVersion": "4.0.6",
+          "queryType": "table",
+          "rawSql": "WITH (\n        SELECT topK(50)(request_user_agent)\n        FROM ${table}\n        WHERE $__timeFilter(timestamp)\n            AND $__adHocFilter() \n) AS top_50_request_user_agent\nSELECT\n    count(),\n    request_user_agent\nFROM ${table}\nWHERE $__timeFilter(timestamp) AND has(top_50_request_user_agent, request_user_agent)\nAND $__adHocFilter()\nGROUP BY request_user_agent\nORDER BY count() DESC\nSETTINGS hdx_query_max_execution_time=60, hdx_query_admin_comment='db=${__dashboard}; dp=Top 50 User Agent; du=${__user.login}'",
+          "refId": "A"
+        }
+      ],
+      "title": "Top 50 User Agent",
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-hydrolix-datasource",
+        "uid": "aeh40cjw63nk0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "count()",
+                  "response_content_type",
+                  "application/rss+xml",
+                  "application/javascript"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 24
+      },
+      "id": 8,
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "values": [
+            "value",
+            "percent"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^count\\(\\)$/",
+          "values": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-hydrolix-datasource",
+            "uid": "aeh40cjw63nk0c"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "meta": {
+            "builderOptions": {
+              "columns": [],
+              "database": "",
+              "limit": 100,
+              "mode": "list",
+              "queryType": "table",
+              "table": ""
+            }
+          },
+          "pluginVersion": "4.0.6",
+          "queryType": "table",
+          "rawSql": "SELECT\ncount(),\nresponse_content_type\nFROM ${table}\nWHERE $__timeFilter(timestamp)\nAND response_content_type IS not NULL\nAND $__adHocFilter()\nGROUP BY response_content_type ORDER BY count() DESC\nSETTINGS hdx_query_max_execution_time=60, hdx_query_admin_comment='db=${__dashboard}; dp=Request Per Content Type; du=${__user.login}'",
+          "refId": "A"
+        }
+      ],
+      "title": "Request Per Content Type",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "grafana-hydrolix-datasource",
+        "uid": "aeh40cjw63nk0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "count()"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 83
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "client_ip"
+            },
+            "properties": [
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "targetBlank": false,
+                    "title": "Show Details",
+                    "url": "/d/${__dashboard.uid}/${__dashboard}?${__all_variables}&var-client_ip=${__data.fields.client_ip:percentencode}"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 24
+      },
+      "id": 7,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-hydrolix-datasource",
+            "uid": "aeh40cjw63nk0c"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "meta": {
+            "builderOptions": {
+              "columns": [],
+              "database": "",
+              "limit": 100,
+              "mode": "list",
+              "queryType": "table",
+              "table": ""
+            }
+          },
+          "pluginVersion": "4.0.6",
+          "queryType": "table",
+          "rawSql": "WITH (\n        SELECT topK(50)(client_ip)\n        FROM ${table}\n        WHERE $__timeFilter(timestamp)\n            AND $__adHocFilter() \n) AS top_50_client_ip\nSELECT\n    count(),\n    client_ip\nFROM ${table}\nWHERE $__timeFilter(timestamp) AND has(top_50_client_ip, client_ip)\nAND $__adHocFilter()\nGROUP BY client_ip\nORDER BY count() DESC\nSETTINGS hdx_query_max_execution_time=60, hdx_query_admin_comment='db=${__dashboard}; dp=Top 50 IP; du=${__user.login}'",
+          "refId": "A"
+        }
+      ],
+      "title": "Top 50 IP",
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-hydrolix-datasource",
+        "uid": "aeh40cjw63nk0c"
+      },
+      "description": "The time in milliseconds from when the edge server is ready to send the first byte of the response to when the last byte reaches the kernel.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 32
+      },
+      "id": 20,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-hydrolix-datasource",
+            "uid": "aeh40cjw63nk0c"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "meta": {
+            "builderOptions": {
+              "columns": [],
+              "database": "",
+              "limit": 100,
+              "mode": "list",
+              "queryType": "table",
+              "table": ""
+            }
+          },
+          "pluginVersion": "4.0.6",
+          "queryType": "table",
+          "rawSql": "SELECT $__timeInterval(timestamp) as time,\nquantile(0.25)(response_time_to_last_byte_ms) as 25th,\nquantile(0.5)(response_time_to_last_byte_ms) as 50th,\nquantile(0.75)(response_time_to_last_byte_ms) as 75th,\nquantile(0.9)(response_time_to_last_byte_ms) as 90th,\nquantile(0.95)(response_time_to_last_byte_ms) as 95th,\nquantile(0.99)(response_time_to_last_byte_ms) as 99th\nFROM ${table}\nWHERE $__timeFilter(timestamp)\nAND $__adHocFilter()\nGROUP BY time ORDER BY time\nSETTINGS hdx_query_max_execution_time=60, hdx_query_admin_comment='db=${__dashboard}; dp=Edge TransferTime; du=${__user.login}'",
+          "refId": "A"
+        }
+      ],
+      "title": "Edge TransferTime",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-hydrolix-datasource",
+        "uid": "aeh40cjw63nk0c"
+      },
+      "description": "The time in milliseconds from when the edge server receives the last byte of the request to when it sends the first bytes of the response.\n",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 32
+      },
+      "id": 21,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-hydrolix-datasource",
+            "uid": "aeh40cjw63nk0c"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "meta": {
+            "builderOptions": {
+              "columns": [],
+              "database": "",
+              "limit": 100,
+              "mode": "list",
+              "queryType": "table",
+              "table": ""
+            }
+          },
+          "pluginVersion": "4.0.6",
+          "queryType": "table",
+          "rawSql": "SELECT $__timeInterval(timestamp) as time,\nquantile(0.25)(response_time_to_last_byte_ms) as 25th,\nquantile(0.5)(response_time_to_first_byte_ms) as 50th,\nquantile(0.75)(response_time_to_first_byte_ms) as 75th,\nquantile(0.9)(response_time_to_first_byte_ms) as 90th,\nquantile(0.95)(response_time_to_first_byte_ms) as 95th,\nquantile(0.99)(response_time_to_first_byte_ms) as 99th\nFROM ${table}\nWHERE $__timeFilter(timestamp)\nAND $__adHocFilter()\nGROUP BY time ORDER BY time\nSETTINGS hdx_query_max_execution_time=60, hdx_query_admin_comment='db=${__dashboard}; dp=Edge Turn Around Time; du=${__user.login}'",
+          "refId": "A"
+        }
+      ],
+      "title": "Edge Turn Around Time",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 40
+      },
+      "id": 14,
+      "panels": [
+        {
+          "datasource": {
+            "type": "grafana-hydrolix-datasource",
+            "uid": "aeh40cjw63nk0c"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 16,
+            "w": 24,
+            "x": 0,
+            "y": 41
+          },
+          "id": 12,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": true,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "12.0.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "grafana-hydrolix-datasource",
+                "uid": "aeh40cjw63nk0c"
+              },
+              "editorType": "sql",
+              "format": 2,
+              "meta": {
+                "builderOptions": {
+                  "columns": [],
+                  "database": "",
+                  "limit": 100,
+                  "mode": "list",
+                  "queryType": "table",
+                  "table": ""
+                }
+              },
+              "pluginVersion": "4.0.6",
+              "queryType": "logs",
+              "rawSql": "SELECT response_status_code::String, * EXCEPT (response_status_code, unknown)\nFROM ${table}\nWHERE $__timeFilter(timestamp)\nAND $__adHocFilter()\nORDER BY timestamp DESC\nLIMIT 1000\nSETTINGS hdx_query_max_execution_time=60, hdx_query_admin_comment='db=${__dashboard}; dp=Raw Logs; du=${__user.login}'",
+              "refId": "A"
+            }
+          ],
+          "title": "Raw Logs",
+          "type": "logs"
+        }
+      ],
+      "title": "Raw Logs",
+      "type": "row"
+    }
+  ],
+  "preload": false,
+  "refresh": "",
+  "schemaVersion": 41,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "text": "integrations.qwilt",
+          "value": "integrations.qwilt"
+        },
+        "hide": 2,
+        "name": "table",
+        "query": "integrations.qwilt",
+        "skipUrlSync": true,
+        "type": "constant"
+      },
+      {
+        "current": {
+          "text": "integrations.`qwilt#.catalog`",
+          "value": "integrations.`qwilt#.catalog`"
+        },
+        "datasource": {
+          "type": "grafana-hydrolix-datasource",
+          "uid": "aeh40cjw63nk0c"
+        },
+        "definition": "SELECT concat(project,'.`',table,'#.catalog`')\nFROM (SELECT splitByChar('.','${table}')[1] as project, splitByChar('.','${table}')[2] as table)",
+        "hide": 2,
+        "includeAll": false,
+        "name": "catalog",
+        "options": [],
+        "query": "SELECT concat(project,'.`',table,'#.catalog`')\nFROM (SELECT splitByChar('.','${table}')[1] as project, splitByChar('.','${table}')[2] as table)",
+        "refresh": 1,
+        "regex": "",
+        "type": "query"
+      },
+      {
+        "baseFilters": [],
+        "datasource": {
+          "type": "grafana-hydrolix-datasource",
+          "uid": "aeh40cjw63nk0c"
+        },
+        "filters": [],
+        "name": "filter",
+        "type": "adhoc"
+      },
+      {
+        "current": {
+          "text": "timestamp",
+          "value": "timestamp"
+        },
+        "hide": 2,
+        "name": "timefilter",
+        "query": "timestamp",
+        "skipUrlSync": true,
+        "type": "constant"
+      }
+    ]
+  },
+  "time": {
+    "from": "2025-03-27T00:02:00.000Z",
+    "to": "2025-03-27T00:05:59.000Z"
+  },
+  "timepicker": {
+    "nowDelay": "1m"
+  },
+  "timezone": "utc",
+  "title": "Qwilt Observability",
+  "uid": "Pj8HEyd4lnsg",
+  "version": 16
+}
