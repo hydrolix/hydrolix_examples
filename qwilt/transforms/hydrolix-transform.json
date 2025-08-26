@@ -926,7 +926,7 @@
       }
     }
   },
-  "url": "https://{myhost}.hydrolix.live/config/v1/orgs/{org_uuid}/projects/{project_uuid}/tables/{table_uuid}/transforms",
+  "url": "https://${HDX_HOSTNAME}.hydrolix.live/config/v1/orgs/{org_uuid}/projects/{project_uuid}/tables/{table_uuid}/transforms",
   "type": "json",
   "table": "{table_uuid}"
 }
