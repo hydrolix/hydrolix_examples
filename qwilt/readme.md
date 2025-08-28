@@ -11,4 +11,4 @@ Make sure you have the following set up prior to exporting Qwilt logs to Hydroli
 
 ## Installation
 
-See the [Hydrolix documentation for ingesting Qwilt logs](https://docs.hydrolix.io/docs/qwilt) for setup details.
+See the [Hydrolix documentation for ingesting Qwilt logs](https://docs.hydrolix.io/docs/qwilt-logs) for setup details.
