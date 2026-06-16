@@ -1,0 +1,121 @@
+- regexp: '(?i).*Googlebot.*|(?i).*Google-InspectionTool.*|(?i).*Mediapartners-Google.*|(?i).*AdsBot-Google.*|(?i).*APIs-Google.*|(?i).*Storebot-Google.*|(?i).*bingbot.*|(?i).*bingPreview.*|(?i).*msnbot.*|(?i).*AdIdxBot.*|(?i).*slurp.*|(?i).*Baiduspider.*|(?i).*YandexBot.*|(?i).*YandexImages.*|(?i).*YandexAccessibilityBot.*|(?i).*duckduckGo-Favicons-Bot.*|(?i).*duckduckbot.*|(?i).*Applebot.*|(?i).*gogoduck.*'
+  ua_category: 'Search Engine Crawler'
+  is_bot: 1
+
+- regexp: '(?i).*gptbot.*|(?i).*chatgpt-user.*|(?i).*oai-searchbot.*|(?i).*ChatGPT-Browser.*|(?i).*ChatGPT Agent.*'
+  ua_category: 'AI LLM Crawler'
+  ai_category: 'OpenAI'
+  is_bot: 1
+
+- regexp: '(?i).*ClaudeBot.*|(?i).*Claude-Web.*|(?i).*anthropic-ai.*|(?i).*Anthropic-Claude.*|(?i).*Claude-SearchBot.*|(?i).*Claude-User.*'
+  ua_category: 'AI LLM Crawler'
+  ai_category: 'Anthropic'
+  is_bot: 1
+
+- regexp: '(?i).*perplexitybot.*|(?i).*perplexity-user.*|(?i).*Perplexity Stealth.*'
+  ua_category: 'AI LLM Crawler'
+  ai_category: 'Perplexity'
+  is_bot: 1
+
+- regexp: '(?i).*web-bot-auth protocol.*|(?i).*agent.bot.goog.*|(?i).*web-bot-auth.*|(?i).*google-agent.*|(?i).*google-extended.*|(?i).*google-cloudvertexbot.*|(?i).*cloudvertexbot.*|(?i).*gemini-ai.*|(?i).*deep-research.*|(?i).*bard-ai.*'
+  ua_category: 'AI LLM Crawler'
+  ai_category: 'Google AI'
+  is_bot: 1
+
+- regexp: '(?i).*facebookexternalhit.*|(?i).*facebookbot.*|(?i).*meta-externalagent.*|(?i).*meta-externalfetcher.*'
+  ua_category: 'AI LLM Crawler'
+  ai_category: 'Meta AI'
+  is_bot: 1
+
+- regexp: '(?i).*cohere-ai.*|(?i).*cohere-command.*|(?i).*cohere-training-data-crawler.*|(?i).*bytespider.*|(?i).*Amazonbot.*|(?i).*MistralAI.*|(?i).*xAI-Bot.*|(?i).*DeepseekBot.*|(?i).*HuggingFace-Bot.*|(?i).*YouBot.*|(?i).*AI2Bot.*|(?i).*Character-AI.*|(?i).*Groq-Bot.*|(?i).*Together-Bot.*|(?i).*Replicate-Bot.*|(?i).*Andibot.*'
+  ua_category: 'AI LLM Crawler'
+  ai_category: 'Others'
+  is_bot: 1
+
+- regexp: '(?i).*CCBot.*|(?i).*ia_archiver.*|(?i).*archive.org_bot.*'
+  ua_category: 'Common Crawler'
+  is_bot: 1
+
+- regexp: '(?i).*AhrefsBot.*|(?i).*SemrushBot.*|(?i).*dotbot.*|(?i).*rogerbot.*|(?i).*screaming frog seo spider.*|(?i).*mj12bot.*|(?i).*deepcrawl.*|(?i).*oncrawl.*|(?i).*botify.*'
+  ua_category: 'SEO Site Monitoring Tool'
+  is_bot: 1
+
+- regexp: '(?i).*linkedinbot.*|(?i).*twitterbot.*|(?i).*pinterest.*|(?i).*instagram.*|(?i).*telegrambot.*|(?i).*whatsapp.*'
+  ua_category: 'Social Media Crawler'
+  is_bot: 1
+
+- regexp: '(?i).*pingdom.*|(?i).*uptimerobot.*|(?i).*statuscake.*|(?i).*gtmetrix.*|(?i).*catchpoint.*|(?i).*new\s*relic.*|(?i).*dynatrace.*|(?i).*appdynamics.*|(?i).*datadog.*|(?i).*uptimerobot.*|(?i).*pingdom.*|(?i).*site24x7.*|(?i).*uptrends.*|(?i).*statuscake.*|(?i).*touchstream.*|(?i).*proximic.*|(?i).*cfnetwork.*'
+  ua_category: 'Monitoring Uptime Services'
+  is_bot: 1
+
+- regexp: '(?i).*diffbot.*|(?i).*omgili.*|(?i).*webzio-extended.*|(?i).*dataforseobot.*|(?i).*scoutjet.*|(?i).*parsehub.*'
+  ua_category: 'Data Collection Scraping Services'
+  is_bot: 1
+
+- regexp: '(?i).*cloudflare-alwaysonline.*|(?i).*netcraftsurveyagent.*|(?i).*censysinspect.*|(?i).*shodan.*'
+  ua_category: 'Security Analysis'
+  is_bot: 1
+
+- regexp: '(?i).*shopify-captain-hook.*|(?i).*pricerunner-bot.*'
+  ua_category: 'ECommerce Price Monitoring'
+  is_bot: 1
+
+- regexp: '(?i).*flipboard.*|(?i).*feedly.*|(?i).*applenewsbot.*'
+  ua_category: 'News Content Aggregators'
+  is_bot: 1
+
+- regexp: '(?i).*petalbot.*|(?i).*sogou web spider.*|(?i).*360spider.*|(?i).*pangubot.*|(?i).*timpibot.*|(?i).*kangaroo bot.*|(?i).*imagesiftbot.*|(?i).*duckassistbot.*|(?i).*runpod-bot.*|(?i).*firecrawlagent.*|(?i).*brightbot.*|(?i).*cotoyogi.*|(?i).*crawlspace.*|(?i).*devin.*|(?i).*iboubot.*|(?i).*bigsur\.ai.*|(?i).*bedrockbot.*'
+  ua_category: 'Specialized Crawlers'
+  is_bot: 1
+
+- regexp: '(?i).*google-videoads-stitching.*'
+  ua_category: 'Video Crawler'
+  is_bot: 1
+
+- regexp: '(?i).*headless.*|(?i).*phantomjs.*|(?i).*puppeteer.*|(?i).*selenium.*|(?i).*htmlunit.*|(?i).*casperjs.*|(?i).*slimerjs.*'
+  ua_category: 'Headless Browser'
+  is_bot: 1
+
+- regexp: '(?i).*curl.*|(?i).*wget.*|(?i).*python-requests.*|(?i).*httpie.*|(?i).*okhttp.*|(?i).*libcurl.*|(?i).*postmanruntime.*|(?i).*go-http-client.*'
+  ua_category: 'Synthetic Browser'
+  is_bot: 0
+
+- regexp: '(?i).*lavf.*|(?i).*kodi.*|(?i).*ffmpeg.*|(?i).*exoplayer.*|(?i).*openload.*|(?i).*libvlc.*'
+  ua_category: 'Video Player'
+  is_bot: 0
+
+- regexp: '(?i).*roku.*'
+  ua_category: 'Roku'
+  is_bot: 0
+
+- regexp: '(?i).*iphone.*|(?i).*ipod touch.*|(?i).*ipod.*'
+  ua_category: 'Mobile iPhone'
+  is_bot: 0
+
+- regexp: '(?i).*ipad.*'
+  ua_category: 'Tablet iOS'
+  is_bot: 0
+
+- regexp: '(?i).*mfi_airplay_device.*'
+  ua_category: 'Airplay Apple'
+  is_bot: 0
+
+- regexp: '(?i).*android.*mobile.*'
+  ua_category: 'Mobile Android'
+  is_bot: 0
+
+- regexp: '(?i).*android.*'
+  ua_category: 'Tablet Android'
+  is_bot: 0
+
+- regexp: '(?i).*smart-tv.*|(?i).*hbbtv.*|(?i).*appletv.*|(?i).*apple tv.*|(?i).*fetchtv.*|(?i).*smartcast.*|(?i).*firetv.*'
+  ua_category: 'Settop Box'
+  is_bot: 0
+
+- regexp: '(?i).*playstation.*|(?i).*xbox.*|(?i).*nintendo.*|(?i).*apple vision.*'
+  ua_category: 'Gaming Console'
+  is_bot: 0
+
+- regexp: '(?i).*windows.*|(?i).*macintosh.*|(?i).*linux.*|(?i).*x11.*|(?i).*fuchsia.*'
+  ua_category: 'Desktop Browser'
+  is_bot: 0
