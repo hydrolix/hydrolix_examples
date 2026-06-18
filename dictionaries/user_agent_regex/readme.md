@@ -1,6 +1,6 @@
 # User-Agent Regexp Dictionary
 
-A [regexp tree dictionary](https://docs.hydrolix.io/docs/regexp-tree-dictionaries) that categorizes user-agent strings during ingest. It groups high-cardinality user-agent values into a small set of categories such as search engine crawlers, AI crawlers, and desktop browsers, so you can index, group by, and filter on the category instead of the raw string.
+A [regexp tree dictionary](https://docs.hydrolix.io/docs/regexp-tree-dictionaries) that categorizes `User-~gent` strings during ingest. It groups high-cardinality user agent values into a small set of categories such as search engine crawlers, AI crawlers, and desktop browsers, so you can index, group by, and filter on the category instead of the raw string.
 
 The dictionary file is [`user_agent_regex_dict.yaml`](user_agent_regex_dict.yaml).
 
@@ -17,7 +17,7 @@ Each pattern node sets these attributes:
 
 ## Use the dictionary
 
-Create a dictionary from the YAML file with the `regexp_tree` layout and `regexp` primary key. Define the schema with these attributes:
+Create a dictionary from the YAML file with the `regexp_tree` layout and `regexp` primary key. Define the `output_columns` with these attributes:
 
 ```json
 [
@@ -28,7 +28,7 @@ Create a dictionary from the YAML file with the `regexp_tree` layout and `regexp
 ]
 ```
 
-To categorize the user agent at ingest, add a `dictGet` lookup to the table's SQL transform that reads the user-agent column:
+To categorize the user agent at ingest, add a `dictGet` lookup to the table's SQL transform that reads the user agent column:
 
 ```sql
 dictGet('myproject_user_agent_regex', 'ua_category', agent) AS user_agent_category
