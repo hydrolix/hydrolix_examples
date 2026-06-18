@@ -1,6 +1,6 @@
 # User-Agent Regexp Dictionary
 
-A [regexp tree dictionary](https://docs.hydrolix.io/docs/regexp-tree-dictionaries) that categorizes `User-~gent` strings during ingest. It groups high-cardinality user agent values into a small set of categories such as search engine crawlers, AI crawlers, and desktop browsers, so you can index, group by, and filter on the category instead of the raw string.
+A [regexp tree dictionary](https://docs.hydrolix.io/docs/regexp-tree-dictionaries) that categorizes `User-Agent` strings during ingest. It groups high-cardinality user agent values into a small set of categories such as search engine crawlers, AI crawlers, and desktop browsers, so you can index, group by, and filter on the category instead of the raw string.
 
 The dictionary file is [`user_agent_regex_dict.yaml`](user_agent_regex_dict.yaml).
 
