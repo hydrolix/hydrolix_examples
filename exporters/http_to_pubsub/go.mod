@@ -1,8 +1,8 @@
 module hydrolix.io/export
 
-go 1.26.7
+go 1.26.0
 
-require cloud.google.com/go/pubsub v1.51.1
+require cloud.google.com/go/pubsub/v2 v2.7.0
 
 require (
 	cloud.google.com/go v0.123.0 // indirect
@@ -10,7 +10,6 @@ require (
 	cloud.google.com/go/auth/oauth2adapt v0.2.8 // indirect
 	cloud.google.com/go/compute/metadata v0.9.0 // indirect
 	cloud.google.com/go/iam v1.13.0 // indirect
-	cloud.google.com/go/pubsub/v2 v2.7.0 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/felixge/httpsnoop v1.1.0 // indirect
 	github.com/go-logr/logr v1.4.4 // indirect
